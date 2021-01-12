@@ -8,5 +8,8 @@ public class ReportUsage {
         JSONReport json = new JSONReport();
         String text1 = json.generate("AAA", "BBB");
         System.out.println(text1);
+        HTMLReport report1 = new HTMLReport();
+        String text2 = report1.generate("Report's name", "Report's body");
+        System.out.println(text2);
     }
 }
