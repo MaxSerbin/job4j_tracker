@@ -8,6 +8,19 @@ public class Item {
     private String name;
     private LocalDateTime created = LocalDateTime.now();
 
+    public Item(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    public Item(int id) {
+        this.id = id;
+    }
+
+    public Item(String name) {
+        this.name = name;
+    }
+
 
    public Item(LocalDateTime created) {
       this.created = created;
@@ -17,19 +30,6 @@ public class Item {
         return created;
     }
 
-
-    public Item(int id) {
-       this.id = id;
-   }
-
-   public Item(String name) {
-       this.name = name;
-   }
-
-   public Item(int id, String name) {
-       this.id = id;
-       this.name = name;
-   }
 
     public static void main(String[] args) {
         Item item = new Item(LocalDateTime.now());
