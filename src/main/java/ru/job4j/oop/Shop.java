@@ -1,12 +1,13 @@
 package ru.job4j.oop;
 
 public class Shop {
-    public static void main(String[] args) {
-        Product product = of("Oil", 100);
-        System.out.println(product.label());
-    }
-
-    public static Product of(String name, int price) {
-        return new Product(name, price);
+    public static int indexOfNull(Product[] products) {
+        for (int i = 0; i < products.length; i++) {
+            Product product = products[i];
+            if (product == null) {
+                return i;
+            }
+        }
+        return -1;
     }
 }
