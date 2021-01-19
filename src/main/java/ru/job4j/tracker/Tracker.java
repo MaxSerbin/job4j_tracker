@@ -27,6 +27,22 @@ public class Tracker {
         }
     }
 
+    public boolean delete(int id) {
+        int index = indexOf(id);
+        if(index == -1) {
+            System.out.println("Индекс " + id + " не найден.");
+            return false;
+        } else {
+            int startPos = index + 1;
+            int distPos = index;
+            int length = size - index;
+            items[size - 1] = null;
+            size--;
+            System.arraycopy(items, startPos, items, distPos, length);
+            return true;
+        }
+    }
+
     private int indexOf(int id) {
         int rsl = -1;
         for (int index = 0; index < size; index++) {
