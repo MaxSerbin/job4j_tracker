@@ -37,7 +37,7 @@ public class Tracker {
               i++;
           }
         }
-        return Arrays.copyOf(name, size);
+        return Arrays.copyOf(name, i);
 
     }
 
