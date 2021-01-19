@@ -20,11 +20,10 @@ public class Tracker {
         if(index == -1) {
             System.out.println("Индекс " + id + " не найден.");
             return false;
-        } else {
+        }
             itemm.setId(id);
             items[index] = itemm;
             return true;
-        }
     }
 
     public boolean delete(int id) {
@@ -32,7 +31,7 @@ public class Tracker {
         if(index == -1) {
             System.out.println("Индекс " + id + " не найден.");
             return false;
-        } else {
+        }
             int startPos = index + 1;
             int distPos = index;
             int length = size - index;
@@ -40,7 +39,6 @@ public class Tracker {
             size--;
             System.arraycopy(items, startPos, items, distPos, length);
             return true;
-        }
     }
 
     private int indexOf(int id) {
