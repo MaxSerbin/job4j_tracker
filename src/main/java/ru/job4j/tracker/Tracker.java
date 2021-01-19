@@ -15,16 +15,32 @@ public class Tracker {
         return itemm;
     }
 
-    public Itemm findById(int id) {
-        Itemm rsl = null;
+    public boolean replace(int id, Itemm itemm) {
+        int index = indexOf(id);
+        if(index == -1) {
+            System.out.println("Индекс " + id + " не найден.");
+            return false;
+        } else {
+            itemm.setId(id);
+            items[index] = itemm;
+            return true;
+        }
+    }
+
+    private int indexOf(int id) {
+        int rsl = -1;
         for (int index = 0; index < size; index++) {
-            Itemm itemm = items[index];
-            if (itemm.getId() == id) {
-                rsl = itemm;
+            if (items[index].getId() == id) {
+                rsl = index;
                 break;
             }
         }
         return rsl;
+    }
+
+    public Itemm findById(int id) {
+        int index = indexOf(id);
+        return index != -1 ? items[index] : null;
     }
 
     public Itemm[] findByName(String key) {
