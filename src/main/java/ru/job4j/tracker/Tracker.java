@@ -17,28 +17,26 @@ public class Tracker {
 
     public boolean replace(int id, Itemm itemm) {
         int index = indexOf(id);
-        if(index == -1) {
-            System.out.println("Индекс " + id + " не найден.");
-            return false;
-        }
+        boolean rsl = index != -1;
+        if (rsl) {
             itemm.setId(id);
             items[index] = itemm;
-            return true;
+        }
+        return rsl;
     }
 
     public boolean delete(int id) {
         int index = indexOf(id);
-        if(index == -1) {
-            System.out.println("Индекс " + id + " не найден.");
-            return false;
-        }
+        boolean rsl = index != -1;
+        if (rsl) {
             int startPos = index + 1;
             int distPos = index;
             int length = size - index;
             System.arraycopy(items, startPos, items, distPos, length);
             items[size - 1] = null;
             size--;
-            return true;
+        }
+            return rsl;
     }
 
     private int indexOf(int id) {
