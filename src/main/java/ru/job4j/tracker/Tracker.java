@@ -35,9 +35,9 @@ public class Tracker {
             int startPos = index + 1;
             int distPos = index;
             int length = size - index;
+            System.arraycopy(items, startPos, items, distPos, length);
             items[size - 1] = null;
             size--;
-            System.arraycopy(items, startPos, items, distPos, length);
             return true;
     }
 
