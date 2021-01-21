@@ -12,6 +12,17 @@ public class Itemm {
     private int id;
         private String name;
 
+        public Itemm(int id, String name) {
+            this.id = id;
+            this.name = name;
+        }
+
+    public Itemm(int id) { this.id = id; }
+
+    public Itemm(String name) {
+        this.name = name;
+    }
+
         public int getId() { return id; }
 
         public void setId(int id) {
