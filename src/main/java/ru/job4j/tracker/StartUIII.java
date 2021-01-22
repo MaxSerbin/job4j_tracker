@@ -20,7 +20,7 @@ public class StartUIII {
                 System.out.println("=== Show all Itemm ===");
                 Itemm[] all = tracker.findAll();
                 for(int i = 0; i < all.length; i++) {
-                    System.out.println(Arrays.toString(new Itemm[]{all[i]}));
+                    System.out.println(all[i]);
                 }
             } else if (select == 2) {
                 System.out.println("=== Replace Itemm ===");
@@ -61,7 +61,7 @@ public class StartUIII {
                 Itemm[] names = tracker.findByName(name);
                 if (names.length > 0) {
                     for(int i = 0; i < names.length; i++) {
-                        System.out.println(Arrays.toString(new Itemm[]{names[i]}));
+                        System.out.println(names[i]);
                     }
                 } else {
                     System.out.println("Заявки с таким именем не найдены.");
