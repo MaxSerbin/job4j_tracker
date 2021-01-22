@@ -19,7 +19,9 @@ public class StartUIII {
             } else if (select == 1) {
                 System.out.println("=== Show all Itemm ===");
                 Itemm[] all = tracker.findAll();
-                System.out.println(Arrays.toString(all));
+                for(int i = 0; i < all.length; i++) {
+                    System.out.println(Arrays.toString(new Itemm[]{all[i]}));
+                }
             } else if (select == 2) {
                 System.out.println("=== Replace Itemm ===");
                 System.out.println("Enter id:");
@@ -27,7 +29,6 @@ public class StartUIII {
                 System.out.println("Enter name:");
                 String name = scanner.nextLine();
                 Itemm itemm = new Itemm(name);
-                tracker.replace(id, itemm);
                 if (tracker.replace(id, itemm)) {
                     System.out.println("Замена прошла успешно.");
                 } else {
@@ -59,7 +60,9 @@ public class StartUIII {
                 String name = scanner.nextLine();
                 Itemm[] names = tracker.findByName(name);
                 if (names.length > 0) {
-                    System.out.println(Arrays.toString(names));
+                    for(int i = 0; i < names.length; i++) {
+                        System.out.println(Arrays.toString(new Itemm[]{names[i]}));
+                    }
                 } else {
                     System.out.println("Заявки с таким именем не найдены.");
                 }
