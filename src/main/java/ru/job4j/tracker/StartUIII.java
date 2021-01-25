@@ -2,7 +2,7 @@ package ru.job4j.tracker;
 
 
 
-public class StartUIII implements Input {
+public class StartUIII {
     public void init(Input input, Tracker tracker) {
         boolean run = true;
         while (run) {
@@ -82,13 +82,4 @@ public class StartUIII implements Input {
         new StartUIII().init(input, tracker);
     }
 
-    @Override
-    public String askStr(String question) {
-        return null;
-    }
-
-    @Override
-    public int askInt(String question) {
-        return 0;
-    }
 }
