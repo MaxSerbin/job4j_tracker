@@ -4,120 +4,30 @@ package ru.job4j.tracker;
 
 public class StartUIII {
 
-    public static void createItemm(Input input, Tracker tracker) {
-        System.out.println("=== Create a new Itemm ===");
-        String name = input.askStr("Enter name: ");
-        Itemm itemm = new Itemm(name);
-        tracker.add(itemm);
-    }
-
-    public static void showAllItemm(Tracker tracker) {
-        System.out.println("=== Show all Itemm ===");
-        Itemm[] all = tracker.findAll();
-        for(int i = 0; i < all.length; i++) {
-            System.out.println(all[i]);
-        }
-    }
-
-    public static void replaceItemm(Input input, Tracker tracker) {
-        System.out.println("=== Replace Itemm ===");
-        int id = Integer.parseInt(input.askStr("Enter id:"));
-        String name = input.askStr("Enter name:");
-        Itemm itemm = new Itemm(name);
-        if (tracker.replace(id, itemm)) {
-            System.out.println("Замена прошла успешно.");
-        } else {
-            System.out.println("Ошибка.");
-        }
-    }
-
-    public static void deleteItemm(Input input, Tracker tracker) {
-        System.out.println("=== Delete itemm ===");
-        int id = Integer.parseInt(input.askStr("Enter id:"));
-        boolean del = tracker.delete(id);
-        if (del) {
-            System.out.println("Удаление прошло успешно.");
-        } else {
-            System.out.println("Ошибка.");
-        }
-    }
-
-    public static void findItemmById(Input input, Tracker tracker) {
-        System.out.println("=== Find itemm by Id ===");
-        int id = Integer.parseInt(input.askStr("Enter id:"));
-        Itemm itemm = tracker.findById(id);
-        if (itemm != null) {
-            System.out.println(itemm);
-        } else {
-            System.out.println("Заявка с таким id не найдена.");
-        }
-    }
-
-    public static void findItemmsByName(Input input, Tracker tracker) {
-        System.out.println("=== Find itemms by name ===");
-        String name = input.askStr("Enter name:");
-        Itemm[] names = tracker.findByName(name);
-        if (names.length > 0) {
-            for(int i = 0; i < names.length; i++) {
-                System.out.println(names[i]);
-            }
-        } else {
-            System.out.println("Заявки с таким именем не найдены.");
-        }
-    }
-
-
-    public void init(Input input, Tracker tracker) {
+    public void init(Input input, Tracker tracker, UserAction[] actions) {
         boolean run = true;
         while (run) {
-            this.showMenu();
-            int select = Integer.valueOf( input.askStr("Select :"));
-            if (select == 0) {
-
-                StartUIII.createItemm(input, tracker);
-
-            } else if (select == 1) {
-
-                StartUIII.showAllItemm(tracker);
-
-            } else if (select == 2) {
-
-               StartUIII.replaceItemm(input, tracker);
-
-            } else if (select == 3) {
-
-                StartUIII.deleteItemm(input, tracker);
-
-            } else if (select == 4) {
-
-                StartUIII.findItemmById(input, tracker);
-
-            } else if (select == 5) {
-
-                StartUIII.findItemmsByName(input, tracker);
-                
-            } else if (select == 6) {
-                run = false;
-            }
+            this.showMenu(actions);
+            int select = input.askInt("Select: ");
+            UserAction action = actions[select];
+            run = action.execute(input, tracker);
         }
     }
 
-    private void showMenu() {
+    private void showMenu(UserAction[] actions) {
         System.out.println("Menu:");
-        System.out.println("0. Add new Itemm");
-        System.out.println("1. Show all itemms");
-        System.out.println("2. Edit itemm");
-        System.out.println("3. Delete itemm");
-        System.out.println("4. Find itemm by Id");
-        System.out.println("5. Find itemms by name");
-        System.out.println("6. Exit Program");
+        for (int index = 0; index < actions.length; index++) {
+            System.out.println(index + ". " + actions[index].name());
+        }
     }
-
 
     public static void main(String[] args) {
         Input input = new ConsoleInput();
         Tracker tracker = new Tracker();
-        new StartUIII().init(input, tracker);
+        UserAction[] actions = {new CreateAction(), new ShowAllAction(), new ReplaceAction(),
+                new DeleteAction(), new FindByIdAction(), new FindByNameAction(),
+                new ExitAction()};
+        new StartUIII().init(input, tracker, actions);
     }
 
 }
