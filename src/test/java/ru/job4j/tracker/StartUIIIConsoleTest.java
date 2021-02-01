@@ -26,7 +26,7 @@ public class StartUIIIConsoleTest {
         new StartUIII(out).init(in, tracker, actions);
         assertThat(out.toString(), is("Menu:" + System.lineSeparator() + "0. === Show all Itemm ===" +
                 System.lineSeparator() + "1. === EXIT ===" + System.lineSeparator() +
-                "=== Show All ===" + System.lineSeparator() + "Itemm{id=1, name='AAA'}" + System.lineSeparator() +
+                "=== Show All ===" + System.lineSeparator() + itemm + System.lineSeparator() +
                 "Menu:" + System.lineSeparator() +
                 "0. === Show all Itemm ===" + System.lineSeparator() + "1. === EXIT ===" +
                 System.lineSeparator()));
@@ -42,7 +42,7 @@ public class StartUIIIConsoleTest {
         new StartUIII(out).init(in, tracker, actions);
         assertThat(out.toString(), is("Menu:" + System.lineSeparator() + "0. === Find itemm by Id ===" +
                 System.lineSeparator() + "1. === EXIT ===" + System.lineSeparator() +
-                "=== Find by Id ===" + System.lineSeparator() + "Itemm{id=1, name='AAA'}" +
+                "=== Find by Id ===" + System.lineSeparator() + itemm +
                 System.lineSeparator() + "Menu:" + System.lineSeparator() +
                 "0. === Find itemm by Id ===" + System.lineSeparator() + "1. === EXIT ===" +
                 System.lineSeparator()));
@@ -58,7 +58,7 @@ public class StartUIIIConsoleTest {
         new StartUIII(out).init(in, tracker, actions);
         assertThat(out.toString(), is("Menu:" + System.lineSeparator() + "0. === Find itemms by name ===" +
                 System.lineSeparator() + "1. === EXIT ===" + System.lineSeparator() +
-                "=== Find by name ===" + System.lineSeparator() + "Itemm{id=1, name='AAA'}" +
+                "=== Find by name ===" + System.lineSeparator() + itemm +
                 System.lineSeparator() + "Menu:" + System.lineSeparator() +
                 "0. === Find itemms by name ===" + System.lineSeparator() + "1. === EXIT ===" +
                 System.lineSeparator()));
