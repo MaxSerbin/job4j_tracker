@@ -37,7 +37,7 @@ public class StartUIII {
     public static void main(String[] args) {
         Output output = new ConsoleOutput();
         Input input = new ValidateInput(output, new ConsoleInput());
-        Tracker tracker = new Tracker();
+        Tracker tracker = Tracker.getTracker();
         UserAction[] actions = {new CreateAction(output), new ShowAllAction(output), new ReplaceAction(output),
                 new DeleteAction(output), new FindByIdAction(output), new FindByNameAction(output),
                 new ExitAction()};
