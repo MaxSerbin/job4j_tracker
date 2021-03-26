@@ -1,7 +1,6 @@
 package ru.job4j.tracker;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class StartUIII {
@@ -50,9 +49,4 @@ public class StartUIII {
         actions.add(new ExitAction());
         new StartUIII(output).init(input, tracker, actions);
     }
-
 }
-//new CreateAction(output),
- //       new ShowAllAction(output), new ReplaceAction(output),
-//        new DeleteAction(output), new FindByIdAction(output), new FindByNameAction(output),
-//        new ExitAction()
