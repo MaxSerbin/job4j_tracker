@@ -42,12 +42,7 @@ public final class Tracker {
         int index = indexOf(id);
         boolean rsl = index != -1;
         if (rsl) {
-            for(Itemm a : items) {
-                if(a.getId() == id) {
-                    items.remove(a);
-                    break;
-                }
-            }
+            items.remove(index);
         }
            return rsl;
     }
