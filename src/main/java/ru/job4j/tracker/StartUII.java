@@ -2,7 +2,7 @@ package ru.job4j.tracker;
 
 import java.util.Arrays;
 
-public class StartUII {
+/*public class StartUII {
     public static void main(String[] args) {
 
         Tracker tracker = new Tracker();
@@ -18,4 +18,5 @@ public class StartUII {
         System.out.println(tracker.findById(2));
         System.out.println(Arrays.toString(tracker.findByName("Book")));
     }
-}
+}*/
+

@@ -5,7 +5,7 @@ import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.nullValue;
 import static org.junit.Assert.assertThat;
 
-public class StartUIIITestMain {
+/*public class StartUIIITestMain {
 
     @Test
     public void whenCreateItemm() {
@@ -21,7 +21,8 @@ public class StartUIIITestMain {
         Tracker tracker = new Tracker();
         Itemm itemm = tracker.add(new Itemm("Replaced itemm"));
         String replacedName = "New itemm name";
-        Input in = new StubInput(new String[] {"0", String.valueOf(itemm.getId()), "New itemm name", "1"});
+        Input in = new StubInput(new String[] {"0",
+        String.valueOf(itemm.getId()), "New itemm name", "1"});
         UserAction[] actions = {new ReplaceAction(), new ExitAction()};
         new StartUIII().init(in, tracker, actions);
         assertThat(tracker.findById(itemm.getId()).getName(), is(replacedName));
@@ -36,4 +37,4 @@ public class StartUIIITestMain {
         new StartUIII().init(in, tracker, actions);
         assertThat(tracker.findById(itemm.getId()), is(nullValue()));
     }
-}
+}*/

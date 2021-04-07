@@ -5,7 +5,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 import static org.hamcrest.core.Is.is;
 
-public class StartUIIIReplaceTest {
+/*public class StartUIIIReplaceTest {
 
     @Test
     public void whenReplaceItemm() {
@@ -17,4 +17,4 @@ public class StartUIIIReplaceTest {
         Itemm replaced = tracker.findById(itemm.getId());
         assertThat(replaced.getName(), is("replaced itemm"));
     }
-}
+}*/

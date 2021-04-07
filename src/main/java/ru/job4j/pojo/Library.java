@@ -25,10 +25,9 @@ public class Library {
         System.out.println("Цикл с выводом книг с именем Clean code.");
         for (int i = 0; i < books.length; i++) {
             Book bk = books[i];
-            if(bk.getName().equals("Clean code")) {
+            if (bk.getName().equals("Clean code")) {
                 System.out.println(bk.getName() + " - " + bk.getPage());
             }
         }
     }
-
 }

@@ -4,7 +4,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 import static org.hamcrest.core.Is.is;
 
-public class StartUIIITest {
+/*public class StartUIIITest {
 
     @Test
     public void whenCreateItemm() {
@@ -18,4 +18,4 @@ public class StartUIIITest {
       assertThat(created.getName(), is(expected.getName()));
 
     }
-}
+}*/

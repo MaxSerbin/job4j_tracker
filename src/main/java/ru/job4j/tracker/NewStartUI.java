@@ -1,6 +1,6 @@
 package ru.job4j.tracker;
 
-public class NewStartUI {
+/*public class NewStartUI {
     public static void main(String[] args) {
         Tracker tracker = new Tracker();
         Itemm solution = new Itemm();
@@ -10,4 +10,5 @@ public class NewStartUI {
         System.out.println(solution);
 
     }
-}
+}*/
+
