@@ -10,7 +10,7 @@ public class Matches {
         int count = 11;
         while (count > 0) {
             String player = turn ? "Первый игрок," : "Второй игрок,";
-            if(count >= 3) {
+            if (count >= 3) {
                 System.out.println(player + " введите число от 1 до 3:");
             } else {
                 System.out.println(player + " введите число от 1 до " + count + ":");

@@ -10,10 +10,10 @@ public class FindEl {
         throw new ElementNotFoundException("Element not found.");
     }
 
-
     public static void main(String[] args) {
         String[] one = new String[] {"AAA", "BBB", "CCC"};
-        try {System.out.println(indexOf(one, "BBB"));
+        try {
+             System.out.println(indexOf(one, "BBB"));
              System.out.println(indexOf(one, "FFF"));
         } catch (ElementNotFoundException e) {
             e.printStackTrace();

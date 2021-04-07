@@ -11,7 +11,6 @@ public class StartUIII {
             this.out = out;
         }
 
-
         public void init(Input input, Tracker tracker, List<UserAction> actions) {
             boolean run = true;
             while (run) {
@@ -25,8 +24,6 @@ public class StartUIII {
                 run = action.execute(input, tracker);
             }
         }
-
-
 
     private void showMenu(List<UserAction> actions) {
         out.println("Menu:");

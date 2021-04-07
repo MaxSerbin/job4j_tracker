@@ -21,7 +21,6 @@ public class Item {
         this.name = name;
     }
 
-
    public Item(LocalDateTime created) {
       this.created = created;
    }
@@ -30,11 +29,8 @@ public class Item {
         return created;
     }
 
-
     public static void main(String[] args) {
         Item item = new Item(LocalDateTime.now());
         System.out.println("Дата и время : " + item.getCreated());
     }
-
-
 }

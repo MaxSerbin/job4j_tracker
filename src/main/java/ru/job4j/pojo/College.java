@@ -7,6 +7,7 @@ public class College {
         student.setGroup("engineer");
         student.setDate("01.09.1998");
 
-        System.out.println(student.getName() + " is a student, he is an " + student.getGroup() + " from " + student.getDate());
+        System.out.println(student.getName() + " is a student, he is an "
+                + student.getGroup() + " from " + student.getDate());
     }
 }

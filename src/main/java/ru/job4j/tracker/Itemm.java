@@ -3,13 +3,6 @@ package ru.job4j.tracker;
 import java.util.Objects;
 
 public class Itemm implements Comparable<Itemm> {
-    @Override
-    public String toString() {
-        return "Itemm{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                '}';
-    }
 
     private int id;
     private String name;
@@ -19,13 +12,15 @@ public class Itemm implements Comparable<Itemm> {
             this.name = name;
         }
 
-    public Itemm(int id) { this.id = id; }
+    public Itemm(int id) {
+            this.id = id; }
 
     public Itemm(String name) {
         this.name = name;
     }
 
-        public int getId() { return id; }
+        public int getId() {
+            return id; }
 
         public void setId(int id) {
             this.id = id;
@@ -46,16 +41,28 @@ public class Itemm implements Comparable<Itemm> {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         Itemm itemm = (Itemm) o;
-        return Objects.equals(id, itemm.id) &&
-                Objects.equals(name, itemm.name);
+        return Objects.equals(id, itemm.id)
+               && Objects.equals(name, itemm.name);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(id, name);
+    }
+
+    @Override
+    public String toString() {
+        return "Itemm{"
+                + "id=" + id
+                + ", name='" + name + '\''
+                + '}';
     }
 
 }

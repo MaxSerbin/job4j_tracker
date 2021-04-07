@@ -26,6 +26,4 @@ public class Profession {
         Profession pro = new Profession("John ", "Connor ", "savior ", "02.08.1977");
         pro.show();
     }
-
-
 }

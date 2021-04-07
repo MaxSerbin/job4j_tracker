@@ -7,8 +7,6 @@ import static org.junit.Assert.*;
 
 public class UniqueTextTest {
 
-
-
         @Test
         public void isEquals() {
             String origin = "My cat eats a mouse and milk";

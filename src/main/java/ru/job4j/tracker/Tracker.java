@@ -21,7 +21,6 @@ public final class Tracker {
         return tracker;
     }
 
-
     public Itemm add(Itemm itemm) {
         itemm.setId(ids++);
         items.add(itemm);
@@ -65,8 +64,8 @@ public final class Tracker {
 
     public List<Itemm> findByName(String key) {
         List<Itemm> name = new ArrayList<>();
-        for(Itemm itemm : items) {
-          if(itemm.getName().equals(key)) {
+        for (Itemm itemm : items) {
+          if (itemm.getName().equals(key)) {
               name.add(itemm);
           }
         }
@@ -75,7 +74,5 @@ public final class Tracker {
 
     public List<Itemm> findAll() {
           return List.copyOf(items);
-
-
     }
 }
