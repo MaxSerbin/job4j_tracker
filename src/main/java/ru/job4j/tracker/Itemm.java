@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class Itemm implements Comparable<Itemm> {
 
-    private int  id;
+    private int id;
     private String name;
 
         public Itemm(int id, String name) {
