@@ -5,7 +5,7 @@ import org.junit.Test;
 public class FactTest {
 
     @Test(expected = IllegalArgumentException.class)
-    public void whenNLessThen0() {
+    public void whenNLessThen0() throws IllegalArgumentException {
         Fact.calc(-1);
     }
 }
