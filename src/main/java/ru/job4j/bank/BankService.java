@@ -79,7 +79,8 @@ public class BankService {
      * @param destPassport - паспортные данные владельца (клиента) счета - реципиента
      * @param destRequisite - реквизиты счета - реципиента
      * @param amount - платеж
-     * @return возвращает: Если счёт не найден или не хватает денег на счёте srcAccount (с которого переводят),
+     * @return возвращает: Если счёт не найден или не хватает денег на счёте srcAccount
+     * (с которого переводят),
      * то метод должен вернуть false, в противном случае возвращает true
      */
     public boolean transferMoney(String srcPassport, String srcRequisite,

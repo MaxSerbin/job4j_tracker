@@ -16,6 +16,7 @@ public class Account {
  * @param requisite - реквизиты
  * @param balance - баланс
  */
+
     public Account(String requisite, double balance) {
         this.requisite = requisite;
         this.balance = balance;
@@ -70,6 +71,7 @@ public class Account {
 /**
  * Переопределение метода
  */
+
     @Override
     public int hashCode() {
         return Objects.hash(requisite);
