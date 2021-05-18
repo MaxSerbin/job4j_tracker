@@ -6,7 +6,6 @@ import java.util.HashMap;
 public class FreezeStr {
     public static boolean eq(String left, String right) {
         HashMap<Character, Integer> map = new HashMap<>();
-        int count = 1;
         if (left.length() != right.length()) {
             return false;
         }
@@ -21,11 +20,15 @@ public class FreezeStr {
             if (!map.containsKey(c)) {
                 return false;
             } else {
-                map.put(c, map.get(c) - 1);
+               map.put(c, map.get(c) - 1);
+            }
+            if (map.containsKey(c) || map.get(c) == 1) {
+                map.remove(c);
+
             }
         }
         for (Character c : map.keySet()) {
-            if (map.get(c) != 0) {
+            if (!map.isEmpty()) {
                 return false;
             }
         }
