@@ -1,6 +1,7 @@
 package ru.job4j.collection;
 
 import java.util.HashMap;
+import java.util.Objects;
 
 
 public class FreezeStr {
@@ -22,16 +23,10 @@ public class FreezeStr {
             } else {
                map.put(c, map.get(c) - 1);
             }
-            if (map.containsKey(c) || map.get(c) == 1) {
+            if (map.containsKey(c) && Objects.equals(map.get(c), 0)) {
                 map.remove(c);
-
             }
         }
-        for (Character c : map.keySet()) {
-            if (!map.isEmpty()) {
-                return false;
-            }
-        }
-        return true;
+        return map.isEmpty();
     }
 }
