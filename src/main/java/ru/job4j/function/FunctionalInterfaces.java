@@ -19,6 +19,9 @@ public class FunctionalInterfaces {
         biCon.accept(7, "seven");
 
         BiPredicate<Integer, String> biPred = (i, s) -> (i % 2 == 0 || map.get(i).length() == 4);
+        for (Integer i : map.keySet()) {
+            System.out.println("key: " + i + " value: " + map.get(i));
+        }
         System.out.println(biPred.test(1, "one"));
         System.out.println(biPred.test(2, "two"));
         System.out.println(biPred.test(3, "three"));
@@ -28,10 +31,12 @@ public class FunctionalInterfaces {
         System.out.println(biPred.test(7, "seven"));
 
         Supplier<List<String>> sup = () -> new ArrayList<>(map.values());
+        List<String> strings = sup.get();
         Consumer<String> con = (s) -> System.out.println(s);
         con.accept(String.valueOf(sup.get()));
         Function<String, String> func = s -> s.toUpperCase();
-        System.out.println(func.apply(String.valueOf(sup.get())));
-
+        for (String s : strings) {
+            System.out.println(func.apply(s));
+        }
     }
 }
