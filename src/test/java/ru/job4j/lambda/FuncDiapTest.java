@@ -19,8 +19,8 @@ public class FuncDiapTest {
     @Test
     public void whenQuadraticFunctionThenQuadraticResults() {
         FuncDiap function = new FuncDiap();
-        List<Double> result = function.diapason(5, 8, x -> 2 * Math.pow(x, 2) + (2 * x) + 1);
-        List<Double> expected = Arrays.asList(61D, 85D, 113D);
+        List<Double> result = function.diapason(5, 8, x -> Math.pow(x, x));
+        List<Double> expected = Arrays.asList(3125D, 46656D, 823543D);
         assertThat(result, is(expected));
     }
 
