@@ -69,9 +69,9 @@ public class SchoolTest {
     public void whenCollectToMap() {
         List<Student> students = List.of(
                 new Student(10, "Surname1"),
-                new Student(10, "Surname1"),
+                new Student(20, "Surname1"),
                 new Student(30, "Surname3"),
-                new Student(30, "Surname3"),
+                new Student(80, "Surname3"),
                 new Student(40, "Surname4"),
                 new Student(60, "Surname6"),
                 new Student(90, "Surname9")
