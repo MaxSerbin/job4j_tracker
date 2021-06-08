@@ -76,16 +76,15 @@ public class SchoolTest {
                 new Student(60, "Surname6"),
                 new Student(90, "Surname9")
         );
-        List<Student> expected = List.of(
-                new Student(10, "Surname1"),
-                new Student(30, "Surname3"),
-                new Student(40, "Surname4"),
-                new Student(60, "Surname6"),
-                new Student(90, "Surname9")
-        );
+
         School sc = new School();
         Map<String, Student> rsl = sc.collectToMap(students);
-        Map<String, Student> exp = sc.collectToMap(expected);
-        assertEquals(exp, rsl);
+        Map<String, Student> exp = new TreeMap<>();
+        exp.put("Surname1", new Student(10, "Surname1"));
+        exp.put("Surname3", new Student(30, "Surname3"));
+        exp.put("Surname4", new Student(40, "Surname4"));
+        exp.put("Surname6", new Student(60, "Surname6"));
+        exp.put("Surname9", new Student(90, "Surname9"));
+        assertEquals(exp.entrySet(), rsl.entrySet());
     }
 }
