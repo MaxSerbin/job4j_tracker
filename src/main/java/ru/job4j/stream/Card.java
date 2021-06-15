@@ -12,11 +12,20 @@ public class Card {
     }
 
 
+
     public static void main(String[] args) {
         Stream.of(Suit.values())
               .flatMap(x -> Stream.of(Value.values())
-              .map(y -> x + " " + y))
+              .map(y -> (new Card(x, y))))
               .forEach(System.out::println);
+    }
+
+    @Override
+    public String toString() {
+        return "Card{" +
+                "suit=" + suit +
+                ", value=" + value +
+                '}';
     }
 }
 
